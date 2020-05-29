@@ -14,7 +14,11 @@ const forecast=(lat,long,callback)=>{
             callback(undefined,'unable to find requested url,try again')
         }
         else{
-            callback(undefined,{temperature:body.current.temperature,feelLike:body.current.feelslike})
+            callback(undefined,{
+                temperature:body.current.temperature,
+                feelLike:body.current.feelslike,
+                weatherDescription:body.current.weather_descriptions[0]
+            })
         }
         
     })    
